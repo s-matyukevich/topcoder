@@ -8,9 +8,9 @@ class Salary {
 	public:
 	int howMuch(vector <string> arrival, vector <string> departure, int wage){
 		vector <tuple<int,int,double>> overtime = {
-			make_tuple(0, 6 * 3600, (double)wage * 1.5/ 3600), 
-			make_tuple(6 * 3600, 18 * 3600, (double)wage/ 3600), 
-			make_tuple(18 * 3600, 24 * 3600, (double)wage * 1.5 / 3600)
+			make_tuple(0, 6 * 3600, (double)wage * 1.5), 
+			make_tuple(6 * 3600, 18 * 3600, (double)wage), 
+			make_tuple(18 * 3600, 24 * 3600, (double)wage * 1.5)
 		};
 		double res = 0;
 		for (size_t i = 0; i < arrival.size(); i++) {
@@ -34,6 +34,6 @@ class Salary {
 				res += delta;
 			}
 		}
-		return (int)res;
+		return (int)res/3600;
 	}
 };

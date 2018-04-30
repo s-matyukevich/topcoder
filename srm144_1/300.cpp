@@ -20,7 +20,7 @@ class BinaryCode {
 			// q[i] = p[i-1] + p[i] + p[i + 1]
 			int q = message[i] - '0'; 
 			pNext = q - pCur - pPrev;
-			if (pNext < 0) {
+			if (pNext < 0 || pNext > 1) {
 				return "NONE";
 			}
 			res += to_string(pNext);
